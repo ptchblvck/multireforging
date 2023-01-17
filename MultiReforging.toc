@@ -1,0 +1,6 @@
+## Interface: 30300
+## Title: MultiReforging
+## Notes: A simple Addon that reforges until you cancel the action
+## Author: ptchblvck
+## Version: 3.3.5
+MultiReforging.lua
