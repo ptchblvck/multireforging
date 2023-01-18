@@ -197,7 +197,10 @@ local function OnUpdate(self, elapsed)
     local mysticExtractCount = GetItemCount(mysticExtractId)
     if frame:IsShown() then
         mysticEnchantReforgeAll:SetText("Reforge All (" .. mysticRuneCount .. ")")
-    end    
+    end
+    if (not frame:IsShown() and mysticEnchantingFameToken:IsShown()) then
+        reforgeCount = 0
+    end
 end
 
 frame:SetScript("OnUpdate", OnUpdate)
