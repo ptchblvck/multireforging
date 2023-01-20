@@ -61,7 +61,7 @@ heading:SetPoint("TOP", frameHeading, "TOP", 0, -10)
 
 
 local closeButton = CreateFrame("Button", "MultiReforgingCloseButton", frame, "UIPanelCloseButton")
-closeButton:SetPoint("TOPRIGHT", frame, "TOPRIGHT", -5, -5)
+closeButton:SetPoint("TOPRIGHT", frame, "TOPRIGHT", 2, 2)
 closeButton:SetScript("OnClick", function()
     frame:Hide()
 end)
@@ -194,9 +194,9 @@ end)
 
 local function OnUpdate(self, elapsed)
     local mysticRuneCount = GetItemCount(mysticRuneId)
-    local mysticExtractCount = GetItemCount(mysticExtractId)
     if frame:IsShown() then
         mysticEnchantReforgeAll:SetText("Reforge All (" .. mysticRuneCount .. ")")
+        local mysticExtractCount = GetItemCount(mysticExtractId)
     end
     if (not frame:IsShown() and mysticEnchantingFameToken:IsShown()) then
         reforgeCount = 0
@@ -296,6 +296,7 @@ local function OnClickExtract()
             C_Timer.After(1.1, function() print("|cff00FFFFReforged " .. "|cffA600FF" .. reforgeCount .. "|cff00FFFF times")
             print("|cff00FFFFReceived 1 additional |cffA600FFMystic Extract") end)
         end
+        currentExtracts = mysticExtractCount
         -- print("|cffFA9BFFMystic Rune count: " .. "|cffA600FF" .. mysticRuneCount) -- this is not needed for now
     else
         mysticExtractReforge:SetEnabled(false)
