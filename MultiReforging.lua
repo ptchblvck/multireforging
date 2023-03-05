@@ -8,6 +8,8 @@ local mysticExtractCount = GetItemCount(mysticExtractId) -- counts the current a
 local mysticEnchantReforgeOnceButton = _G["MysticEnchantingFrameControlFrameRollButton"] -- the reforge button from the main UI
 local mysticEnchantingFameToken = _G["MysticEnchantingFrameControlFrameTokenFrameTokenButton"] -- the check token for enabling mysticEnchantReforgeTenTimes and mysticEnchantReforgeAll
 
+local addonVersion = "v0.0.15 beta"
+
 -- reverse engineering tool to get frame names
 
 --[[
@@ -213,7 +215,7 @@ local function OnEvent(self, event, ...)
     if event == "PLAYER_LOGIN" then
         local mysticRuneCount = GetItemCount(mysticRuneId)
         local mysticExtractCount = GetItemCount(mysticExtractId)
-        print("|cffFE67D2MultiReforging v0.0.12 beta by " .. "|cff67FE93ptchblvck" .. "|cffFE67D2 loaded")
+        print("|cffFE67D2MultiReforging " .. addonVersion .. " by " .. "|cff67FE93ptchblvck" .. "|cffFE67D2 loaded")
         C_Timer.After(5, function() -- wait 5 seconds before checking
             if CollectionsFrame:IsShown() and mysticEnchantReforgeOnceButton:IsShown() then
                 frame:Show()
