@@ -2,5 +2,5 @@
 ## Title: MultiReforging
 ## Notes: A simple Addon that reforges until you cancel the action
 ## Author: ptchblvck
-## Version: 0.0.15 beta
+## Version: 0.0.16 beta
 MultiReforging.lua
