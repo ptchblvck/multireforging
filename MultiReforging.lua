@@ -238,10 +238,10 @@ local function OnClick()
         reforgeCount = reforgeCount + 1
         local mysticRuneCount = GetItemCount(mysticRuneId)
         if clicks < 10 then
-            C_Timer.After(1.1, function() mysticEnchantReforgeTenTimes:Click() end)
+            C_Timer.After(1.5, function() mysticEnchantReforgeTenTimes:Click() end)
         else
             clicks = 0
-            C_Timer.After(1.1, function() print("|cff00FFFFReforged " .. "|cffA600FF" .. reforgeCount .. "|cff00FFFF times") end)
+            C_Timer.After(1.5, function() print("|cff00FFFFReforged " .. "|cffA600FF" .. reforgeCount .. "|cff00FFFF times") end)
         end
         -- print("|cffFA9BFFMystic Rune count: " .. "|cffA600FF" .. mysticRuneCount) -- this is not needed for now
     else
@@ -262,10 +262,10 @@ local function OnClickAllRunes()
         reforgeCount = reforgeCount + 1
         local mysticRuneCount = GetItemCount(mysticRuneId)
         if clicks < mysticRuneCount then
-            C_Timer.After(1.1, function() mysticEnchantReforgeAll:Click() end)
+            C_Timer.After(1.5, function() mysticEnchantReforgeAll:Click() end)
         else
             clicks = 0
-            C_Timer.After(1.1, function() print("|cff00FFFFReforged " .. "|cffA600FF" .. reforgeCount .. "|cff00FFFF times") end)
+            C_Timer.After(1.5, function() print("|cff00FFFFReforged " .. "|cffA600FF" .. reforgeCount .. "|cff00FFFF times") end)
         end
         -- print("|cffFA9BFFMystic Rune count: " .. "|cffA600FF" .. mysticRuneCount) -- this is not needed for now
     else
@@ -290,10 +290,10 @@ local function OnClickExtract()
         local mysticRuneCount = GetItemCount(mysticRuneId)
         local mysticExtractCount = GetItemCount(mysticExtractId)
         if mysticExtractCount == currentExtracts and clicks < mysticRuneCount then
-            C_Timer.After(1.1, function() mysticExtractReforge:Click() end)
+            C_Timer.After(1.5, function() mysticExtractReforge:Click() end)
         else
             clicks = 0
-            C_Timer.After(1.1, function() print("|cff00FFFFReforged " .. "|cffA600FF" .. reforgeCount .. "|cff00FFFF times")
+            C_Timer.After(1.5, function() print("|cff00FFFFReforged " .. "|cffA600FF" .. reforgeCount .. "|cff00FFFF times")
             print("|cff00FFFFReceived 1 additional |cffA600FFMystic Extract") end)
         end
         currentExtracts = mysticExtractCount
