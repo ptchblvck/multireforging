@@ -7,10 +7,13 @@ local mysticRuneCount = GetItemCount(mysticRuneId) -- counts the current amount 
 local mysticExtractCount = GetItemCount(mysticExtractId) -- counts the current amount of Mystic Extracts
 local mysticEnchantReforgeOnceButton = _G["MysticEnchantingFrameControlFrameRollButton"] -- the reforge button from the main UI
 local mysticEnchantingFameToken = _G["MysticEnchantingFrameControlFrameTokenFrameTokenButton"] -- the check token for enabling mysticEnchantReforgeTenTimes and mysticEnchantReforgeAll
+
+-- Loading Version from File
 local multiReforging = "MultiReforging"
 local addonVersion = GetAddOnMetadata(multiReforging, "Version")
 local addonAuthor = GetAddOnMetadata(multiReforging, "Author")
--- local addonVersion = "v0.0.15 beta"
+
+
 
 -- reverse engineering tool to get frame names
 
@@ -242,10 +245,10 @@ local function OnClick()
         reforgeCount = reforgeCount + 1
         local mysticRuneCount = GetItemCount(mysticRuneId)
         if clicks < 10 then
-            C_Timer.After(1.5, function() mysticEnchantReforgeTenTimes:Click() end)
+            C_Timer.After(1.2, function() mysticEnchantReforgeTenTimes:Click() end)
         else
             clicks = 0
-            C_Timer.After(1.5, function() print("|cff00FFFFReforged " .. "|cffA600FF" .. reforgeCount .. "|cff00FFFF times") end)
+            C_Timer.After(1.2, function() print("|cff00FFFFReforged " .. "|cffA600FF" .. reforgeCount .. "|cff00FFFF times") end)
         end
         -- print("|cffFA9BFFMystic Rune count: " .. "|cffA600FF" .. mysticRuneCount) -- this is not needed for now
     else
@@ -266,10 +269,10 @@ local function OnClickAllRunes()
         reforgeCount = reforgeCount + 1
         local mysticRuneCount = GetItemCount(mysticRuneId)
         if clicks < mysticRuneCount then
-            C_Timer.After(1.5, function() mysticEnchantReforgeAll:Click() end)
+            C_Timer.After(1.2, function() mysticEnchantReforgeAll:Click() end)
         else
             clicks = 0
-            C_Timer.After(1.5, function() print("|cff00FFFFReforged " .. "|cffA600FF" .. reforgeCount .. "|cff00FFFF times") end)
+            C_Timer.After(1.2, function() print("|cff00FFFFReforged " .. "|cffA600FF" .. reforgeCount .. "|cff00FFFF times") end)
         end
         -- print("|cffFA9BFFMystic Rune count: " .. "|cffA600FF" .. mysticRuneCount) -- this is not needed for now
     else
@@ -294,10 +297,10 @@ local function OnClickExtract()
         local mysticRuneCount = GetItemCount(mysticRuneId)
         local mysticExtractCount = GetItemCount(mysticExtractId)
         if mysticExtractCount == currentExtracts and clicks < mysticRuneCount then
-            C_Timer.After(1.5, function() mysticExtractReforge:Click() end)
+            C_Timer.After(1.2, function() mysticExtractReforge:Click() end)
         else
             clicks = 0
-            C_Timer.After(1.5, function() print("|cff00FFFFReforged " .. "|cffA600FF" .. reforgeCount .. "|cff00FFFF times")
+            C_Timer.After(1.2, function() print("|cff00FFFFReforged " .. "|cffA600FF" .. reforgeCount .. "|cff00FFFF times")
             print("|cff00FFFFReceived 1 additional |cffA600FFMystic Extract") end)
         end
         currentExtracts = mysticExtractCount
