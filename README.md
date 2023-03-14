@@ -22,7 +22,10 @@ unpack the zip file and copy the folder into your Ascension AddOn directory. Usu
 > *This is an example path. You should always check where your Ascension Launcher directory is located.
 
 ## ⚠️ DISCLAIMER ⚠️
-Rename the folder to **MultiReforging** - This is crucial. The Addon won't work or even show up if the directory has a different name.
+```ruby
+Rename the folder to MultiReforging
+```
+This is crucial. The Addon won't work or even show up if the directory has a different name.
 
 Activate MultiReforging in your Login-screen via Addons:
 
